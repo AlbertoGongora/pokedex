@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to top, #48c6ef 0%, #294ccc 100%);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+  #dexbody {
+    background: red;
+    height: 675px;
+    width: 1000px;
+    padding-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 14px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
+      -6px -6px 10px 0 rgba(0, 0, 0, 0.25) inset;
+  }
+  
+  #dexball1 {
+    background: rgb(242, 244, 255);
+    background: radial-gradient(
+      circle,
+      rgb(205, 255, 255) 10%,
+      rgb(24, 36, 148) 60%
+    );
+    height: 80px;
+    width: 80px;
+    margin-top: -100px;
+    margin-left: 40px;
+    border-radius: 100px;
+    border: 10px solid white;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+  }
+  
+  
+#dexball2 {
+  background: radial-gradient(circle, rgb(255, 129, 129) , #ff3c38 45%);
+  height: 30px;
+  width: 30px;
+  margin-top: -65px;
+  margin-left: 160px;
+  border-radius: 100px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+}
+
+  
+#dexball3 {
+    background: rgb(255, 254, 179);
+    background: radial-gradient(
+        circle,
+        rgba(255, 254, 179, 1) 5%,
+        rgba(251, 239, 76, 1) 45%
+    );
+    height: 30px;
+    width: 30px;
+    margin-top: -33px;
+    margin-left: 210px;
+    border-radius: 100px;
+
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+}
+
+#dexball4 {
+    background-color: #4ff017;
+    background: radial-gradient(circle, rgb(179, 255, 204) 5%, #4ff017 45%);
+    height: 30px;
+    width: 30px;
+    margin-top: -33px;
+    margin-left: 260px;
+    border-radius: 100px;
+
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+}
+
+#logo-pokedex {
+    width: 200px;
+    text-align: center;
+    margin-top: -90px;
+}
+
+#screen {
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    height: 480px;
+    width: 750px;
+    padding-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.329) inset,
+        -3px -3px 3px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+#screen2 {
+    background: rgb(218, 239, 255);
+    background: linear-gradient(
+        -45deg,
+        rgba(218, 239, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 45%,
+        rgba(218, 239, 255, 1) 100%
+    );
+
+    height: 520px;
+    width: 690px;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -120px;
+    margin-bottom: 100px;
+    border-radius: 5px;
+}
+
+#cut {
+    background-color: red;
+    height: 40px;
+    width: 100px;
+    margin-top: -90px;
+    transform: rotate(-135deg);
+    margin-left: -3px;
+    border-radius: 10%;
+}
+
+#simbol {
+    height: 80px;
+    padding-left: 10px;
+}
+  
+#teste {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -40px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+/* Estilos para el formulario */
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el campo de entrada */
+input[type="text"] {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+/* Estilos para los botónes */
+button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #e62117;
+    color: white;
+}
+
+/* Estilos para el contenedor principal */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilos para la tarjeta */
+#pokecard {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el nombre */
+#poke-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    /* text-align: center; */
+
+}
+
+/* Estilos para la imagen */
+#poke-img {
+    width: 170px; 
+    height: 170px;
+    /* display: block;
+    margin: 0 auto; */
+}
+
+/* Estilos para el ID */
+#poke-id {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la altura y el peso */
+#poke-height-weight {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/*Estilos para los tipos*/
+#poke-types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.type {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+
+}
+
+/* #poke-types div {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+} */
+
+
+/* Estilos para las estadísticas */
+#poke-stats {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #444;
+}
+
+#poke-stats div {
+    margin-bottom: 8px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+}
+
+.stat-bar {
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: #ccc;
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-inner {
+    height: 100%;
+    background-color: #e62117;
+}
+
+.stat-desc, .stat-number {
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.stat-desc {
+    width: 30%;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+  }

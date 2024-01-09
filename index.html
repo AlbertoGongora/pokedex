@@ -1,56 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title> Pokédex </title>
-        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-        <link rel="manifest" href="./assets/favicon/site.webmanifest">
-        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
-    </head>
-    <body>
-        <header>
-
-            <h1> Pokédex </h1>
-
-        </header>
-
-        <form onsubmit="busquedaPokemon(event)">
-
-            <input type="text" name="browser" autocomplete="off">
-            <button type="submit">Buscar</button>
-
-        </form>
-
-        <main id="pokecard">
-            
-            <div id="poke-name"></div>
-
-            <figure id="poke-img-container">
-
-                <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
-                
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pokédex</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div name="dexbody" id="dexbody">
+    <div name="dexball1" id="dexball1"></div>
+    <div name="dexball2" id="dexball2"></div>
+    <div name="dexball3" id="dexball3"></div>
+    <div name="dexball4" id="dexball4"></div>
+    <div class="container">
+        <div class="centered">
+            <figure>
+                <img id="logo-pokedex" src="./assets/img/logo.png" alt="Logo de Pokedex">
             </figure>
-
-            <div id="poke-id"></div>
-            <div id="poke-height-weight"></div>
-            <div id="poke-types"></div>
-            <div id="poke-stats"></div>
-
+        </div>
+        <main name="screen" id="screen">
+            <div name="screen2" id="screen2">            
+                <div id="teste">
+                    <section id="pokecard">
+                        <form action="" onsubmit="busquedaPokemon(event)">
+                            <input type="text" name="browser" id="searchBox" class="searchBox" autocomplete="off" placeholder="Nombre Pokémon o #Id">
+                            <button type="submit">Buscar</button>
+                            <button type="button" onclick="reiniciarBusqueda()">Reiniciar Búsqueda</button>
+                        </form>
+                        <div id="poke-name">Encuentra tu Pokémon</div>
+                        <figure id="poke-img-container">
+                            <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
+                        </figure>
+                        <div id="poke-id"></div>
+                        <div id="poke-height-weight"></div>
+                        <div id="poke-types"></div>
+                        <div id="poke-stats"></div>
+                    </section>
+                </div>
+            </div>
         </main>
+    </div>
         
-        <footer>
-            <p>&copy; 2024. Todos los derechos reservados.
-                <br>
-                Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
-            </p>
-        </footer>
+    <footer>
+        <p>&copy; 2024. Todos los derechos reservados.
+            <br>
+            Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
+        </p>
+    </footer>
+</div>   
 
-        <script src="main.js"></script>
-    </body>
+    <script src="main.js"></script>
+</body>
 </html>
