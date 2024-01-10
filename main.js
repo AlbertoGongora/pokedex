@@ -248,6 +248,7 @@ const mostrarErrorIdNoEncontrado = () => {
 }
 
 // Función para mostrar error por nombre no introducido
+// Holi
 
 const mostrarErrorNombreNoIntroducido = () => {
     browser.value = ''; // Limpia el campo de búsqueda;
