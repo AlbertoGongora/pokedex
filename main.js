@@ -33,14 +33,75 @@ const typeColors = {
     shadow: '#000000'
 };
 
+// Definición de traducciones
+const typeTranslations = {
+    electric: 'eléctrico',
+    normal: 'normal',
+    fire: 'fuego',
+    water: 'agua',
+    ice: 'hielo',
+    rock: 'roca',
+    flying: 'volador',
+    grass: 'Planta',
+    psychic: 'psíquico',
+    ghost: 'fantasma',
+    bug: 'bicho',
+    poison: 'veneno',
+    ground: 'tierra',
+    dragon: 'dragón',
+    steel: 'acero',
+    fighting: 'lucha',
+    dark: 'siniestro',
+    fairy: 'hada',
+    unknown: 'desconocido',
+    shadow: 'sombra'
+};
+
+const statsTranslations = {
+    hp: 'Vida',
+    attack: 'Ataque',
+    defense: 'Defensa',
+    'special-attack': 'Ataque Especial',
+    'special-defense': 'Defensa Especial',
+    speed: 'Velocidad'
+}
+
+
+// ! Contante para intentar abreviar el nombre de la estadística si no cabe el texto
+// const abreviacionStats = {
+//     Vida: 'HP',
+//     Ataque: 'ATK',
+//     Defensa: 'DEF',
+//     'Ataque-Especial': 'SATK',
+//     'Defensa-Especial': 'SDEF',
+//     Velocidad: 'SPD'
+// }
+
 // Función para buscar un pokemon introducido por el usuario convierta en minusculas de el texto introducido
 const busquedaPokemon = (event) => {
     event.preventDefault();
     const { value } = event.target.browser;
-    const pokemonId = parseInt(value)
 
-    if (pokemonId > 0 && pokemonId <= 1017) {
-        fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`) 
+    // Verifica si el valor ingresado es un número
+    const siEsNumero = /^\d+$/.test(value);
+    let resultadoDelInput;
+
+    if (siEsNumero) {
+        // Si es un número, utiliza la búsqueda por número
+        const pokemonId = parseInt(value);
+        if (pokemonId > 0 && pokemonId <= 1017) {
+            resultadoDelInput = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+        } else {
+            console.error('ID no válido');            
+            mostrarErrorIdNoEncontrado();
+            return;
+        }
+    } else {
+        // Si no es un número, utiliza la búsqueda por nombre
+        resultadoDelInput = `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`;
+    }
+
+    fetch(resultadoDelInput)
         .then(response => {
             if (!response.ok) {
                 throw new Error('No se encontró el Pokémon');
@@ -52,10 +113,6 @@ const busquedaPokemon = (event) => {
             console.error(error);
             mostrarError();
         });
-    } else {
-        console.error('Id no valida');
-        mostrarError();
-    }
 }
 
 // Función para mostrar la información del pokemon 
@@ -65,6 +122,7 @@ const informacionPokemon = data => {
     const centimetros = 10; 
     const kilogramos = 10; 
 
+    browser.value = '';
     pokeName.textContent = name.charAt(0).toUpperCase() + name.slice(1);
     pokeImg.src = spritesFront;
     pokeId.textContent = `ID: #${id}`;
@@ -75,7 +133,7 @@ const informacionPokemon = data => {
 
 }
 
-// Funcion para insertar los tipos y el color de los tipos
+// Funcion para insertar los tipos, traducirlos y dar el color de los tipos
 const PokemonTypes = types => {
     pokeTypes.innerHTML = '';
     types.forEach(type => {
@@ -83,33 +141,81 @@ const PokemonTypes = types => {
         typeElement.classList.add('type'); 
         typeElement.style.backgroundColor = typeColors[type.type.name];
         const typeName = type.type.name;
-        typeElement.textContent = typeName.charAt(0).toUpperCase() + typeName.slice(1); // Capitaliza el nombre del tipo
+ 
+        // Traduce el nombre del tipo si hay una traducción disponible
+        const translatedTypeName = typeTranslations[typeName] || typeName;
+
+        typeElement.textContent = translatedTypeName.charAt(0).toUpperCase() + translatedTypeName.slice(1); // Capitaliza el nombre del tipo
         pokeTypes.appendChild(typeElement);
     });   
 }
 
 // Funcion para insertar las estadísticas
 const PokemonStats = stats => {
-pokeStats.innerHTML = '';
-stats.forEach(stat => {
-    const statElement = document.createElement('div');
-    const statName = stat.stat.name;
-    const statValue = stat.base_stat;
+    pokeStats.innerHTML = '';
+    stats.forEach(stat => {
+        const statElement = document.createElement('div');
+        const statName = stat.stat.name;
+        let valorEstado = stat.base_stat;
 
-    statElement.innerHTML = `
-        <div class="stat-row">
-            <div class="stat-desc">${statName.charAt(0).toUpperCase() + statName.slice(1)}</div>
-            <div class="stat-bar">
-                <div class="bar-inner" style="width: ${statValue}%"></div>
+        // Limitar el valor a 155 si es mayor
+        valorEstado = Math.min(valorEstado, 250);
+
+        // Traduce el nombre de la estadística si hay una traducción disponible
+        const statNameTranslated = statsTranslations[statName] || statName;
+
+        statElement.innerHTML = `
+            <div class="stat-row">
+                <div class="stat-desc">${statNameTranslated.charAt(0).toUpperCase() + statNameTranslated.slice(1)}</div>
+                <div class="stat-bar">
+                    <div class="bar-inner" style="width: ${valorEstado / 155 * 100}%"></div>
+                </div>
+                <div class="stat-number">${valorEstado}</div>
             </div>
-            <div class="stat-number">${statValue}</div>
-        </div>
-    `;
-    pokeStats.appendChild(statElement);
+        `;
+        pokeStats.appendChild(statElement);
     });
 }
 
-// Función para mostrar un error
+// ! Funcion que hace que el maximo de la barra de estados sea el valor maximo de la estadistica
+// // Funcion para insertar las estadísticas
+// const PokemonStats = stats => {
+//     pokeStats.innerHTML = '';
+//     let nivelMaximoEstado = 0;
+
+//     // Encontrar el valor máximo de las estadísticas
+//     stats.forEach(stat => {
+//         nivelMaximoEstado = Math.max(nivelMaximoEstado, stat.base_stat);
+//     });
+
+//     stats.forEach(stat => {
+//         const statElement = document.createElement('div');
+//         const statName = stat.stat.name;
+//         const valorEstado = stat.base_stat;
+
+//         // Ajustar el valor al máximo encontrado
+//         const adjustedStatValue = Math.min(valorEstado, 250);
+//         const anchoBarra = (adjustedStatValue / nivelMaximoEstado) * 100;
+
+//         // Traduce el nombre de la estadística si hay una traducción disponible
+//         const statNameTranslated = statsTranslations[statName] || statName;
+
+//         statElement.innerHTML = `
+//             <div class="stat-row">
+//                 <div class="stat-desc">${statNameTranslated.charAt(0).toUpperCase() + statNameTranslated.slice(1)}</div>
+//                 <div class="stat-bar">
+//                     <div class="bar-inner" style="width: ${anchoBarra}%"></div>
+//                 </div>
+//                 <div class="stat-number">${valorEstado}</div>
+//             </div>
+//         `;
+//         pokeStats.appendChild(statElement);
+//     });
+// }
+
+
+
+// Función para mostrar un error por busqueda de nombre
 const mostrarError = () => {
     browser.value = ''; // Limpia el campo de búsqueda;
     browser.placeholder = 'Inténtalo de nuevo';
@@ -121,6 +227,20 @@ const mostrarError = () => {
     pokeStats.innerHTML = '';
     desactivarTransicion();
 }
+
+// Función para mostrar un error por busqueda de ID
+const mostrarErrorIdNoEncontrado = () => {
+    browser.value = ''; // Limpia el campo de búsqueda;
+    browser.placeholder = 'Inténtalo de nuevo';
+    pokeName.textContent = 'ID no encontrado...';
+    pokeImg.src = './assets/img/pokeshadow.png';
+    pokeId.textContent = '';
+    pokeHeightWeight.textContent = '';
+    pokeTypes.innerHTML = '';
+    pokeStats.innerHTML = '';
+    desactivarTransicion();
+}
+
 // Boton de reinicio de la barra de busqueda
 const reiniciarBusqueda = () => {
     pokeName.textContent = 'Encuentra tu Pokémon';
@@ -142,12 +262,12 @@ function activarTransicion() {
 
 // Funciones manejadoras para mouseover y mouseout
 function encimaDeImg() {
-    pokeImg.style.transition = 'transform 0.5s ease-in';
+    pokeImg.style.transition = 'transform 0.4s ease-in';
     pokeImg.style.transform = 'scale(1.2)';
 }
 
 function fueraDeImg() {
-    pokeImg.style.transition = 'transform 0.5s ease-in';
+    pokeImg.style.transition = 'transform 0.4s ease-in';
     pokeImg.style.transform = 'scale(1)';
 }
 
@@ -156,9 +276,5 @@ function desactivarTransicion() {
     pokeImg.removeEventListener('mouseover', encimaDeImg);
     pokeImg.removeEventListener('mouseout', fueraDeImg);
 }
-
-
-
-
 
 
