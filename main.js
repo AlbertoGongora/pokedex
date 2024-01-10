@@ -97,8 +97,14 @@ const busquedaPokemon = (event) => {
             return;
         }
     } else {
-        // Si no es un número, utiliza la búsqueda por nombre
-        resultadoDelInput = `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`;
+        if (value === '') {
+            console.error('No has introducido ningún pokémon');
+            mostrarErrorNombreNoIntroducido();
+            return;
+        } else {
+            // Si no es un número, utiliza la búsqueda por nombre
+            resultadoDelInput = `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`;
+        }
     }
 
     fetch(resultadoDelInput)
@@ -233,6 +239,20 @@ const mostrarErrorIdNoEncontrado = () => {
     browser.value = ''; // Limpia el campo de búsqueda;
     browser.placeholder = 'Inténtalo de nuevo';
     pokeName.textContent = 'ID no encontrado...';
+    pokeImg.src = './assets/img/pokeshadow.png';
+    pokeId.textContent = '';
+    pokeHeightWeight.textContent = '';
+    pokeTypes.innerHTML = '';
+    pokeStats.innerHTML = '';
+    desactivarTransicion();
+}
+
+// Función para mostrar error por nombre no introducido
+
+const mostrarErrorNombreNoIntroducido = () => {
+    browser.value = ''; // Limpia el campo de búsqueda;
+    browser.placeholder = 'Introduce un nombre o un #id';
+    pokeName.textContent = 'Nombre no introducido...';
     pokeImg.src = './assets/img/pokeshadow.png';
     pokeId.textContent = '';
     pokeHeightWeight.textContent = '';
