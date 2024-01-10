@@ -15,46 +15,48 @@
 </head>
 <body>
 <div name="dexbody" id="dexbody">
+    <header class="titulo">
     <div name="dexball1" id="dexball1"></div>
     <div name="dexball2" id="dexball2"></div>
     <div name="dexball3" id="dexball3"></div>
     <div name="dexball4" id="dexball4"></div>
+    <figure>
+        <img id="logo-pokedex" src="./assets/img/logo.png" alt="Logo de Pokedex">
+    </figure>
+    </header>
     <div class="container">
-        <div class="centered">
-            <figure>
-                <img id="logo-pokedex" src="./assets/img/logo.png" alt="Logo de Pokedex">
-            </figure>
-        </div>
+
         <main name="screen" id="screen">
-            <div name="screen2" id="screen2">            
-                <div id="teste">
-                    <section id="pokecard">
-                        <form action="" onsubmit="busquedaPokemon(event)">
-                            <input type="text" name="browser" id="searchBox" class="searchBox" autocomplete="off" placeholder="Nombre Pokémon o #Id">
-                            <button type="submit">Buscar</button>
-                            <button type="button" onclick="reiniciarBusqueda()">Reiniciar Búsqueda</button>
-                        </form>
-                        <div id="poke-name">Encuentra tu Pokémon</div>
-                        <figure id="poke-img-container">
-                            <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
-                        </figure>
-                        <div id="poke-id"></div>
-                        <div id="poke-height-weight"></div>
-                        <div id="poke-types"></div>
-                        <div id="poke-stats"></div>
-                    </section>
-                </div>
-            </div>
+
+<!-- He quitado el div 'screen2' y el 'teste' para que fuera la 'section id="pokecard"' directamente la pantalla principal -->
+
+            <section id="pokecard">
+                <form action="" onsubmit="busquedaPokemon(event)">
+                    <input type="text" name="browser" id="searchBox" class="searchBox" autocomplete="off" placeholder="Nombre Pokémon o #Id">
+                    <button type="submit" class="searchIcon"></button>
+                    <button type="button" class="restartIcon" onclick="reiniciarBusqueda()"></button>
+                </form>
+                <div id="poke-name">Encuentra tu Pokémon</div>
+                <figure id="poke-img-container">
+                    <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
+                </figure>
+                <div id="poke-id"></div>
+                <div id="poke-height-weight"></div>
+                <div id="poke-types"></div>
+                <div id="poke-stats"></div>
+            </section>
         </main>
     </div>
-        
-    <footer>
-        <p>&copy; 2024. Todos los derechos reservados.
-            <br>
-            Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
-        </p>
-    </footer>
 </div>   
+        
+<!-- He cambiado de orden los elementos de la clase 'footer' para que aparezcan el menor arriba y el mas largo abajo, quedando acorde visualmente. -->
+
+<footer>
+    <p>Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
+        <br>
+        &copy; 2024. Todos los derechos reservados.
+    </p>
+</footer>
 
     <script src="main.js"></script>
 </body>
