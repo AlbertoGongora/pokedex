@@ -59,8 +59,16 @@ header.titulo {
     /* margin-left: 40px; */
     border-radius: 50px; /* He quitado cambiado todos los border-radius a 50px, ya que hacerlo cirlulo no era necesario 100px.*/
     border: 7px solid white; /* He reducido a 7px el border para que se vea mejor cuando la imagen se reduzca.*/
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
-}
+    
+     /*! cambios en sombra*/
+
+     box-shadow: 
+         0 0 5px rgba(0, 0, 0, 0.462), 
+         0 0 5px rgba(0, 0, 0, 0.462);
+ }
+    
+    /* box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137); */
+
   
 /* Estilos para los demas dexballs. */
 #dexball2 {
@@ -71,7 +79,16 @@ header.titulo {
   /* margin-top: -65px; */
   /* margin-left: 160px; */
   border-radius: 50px; /* Igual que en el dexball1.*/
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+    
+  /*! cambios en sombra*/
+
+     box-shadow: 
+         0 0 5px rgba(0, 0, 0, 0.462), 
+         0 0 5px rgba(0, 0, 0, 0.462);
+ 
+
+
+  /* box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137); */
 }
 
 #dexball3 {
@@ -86,7 +103,15 @@ header.titulo {
     /* margin-top: -30px; lo he reducido para que queden alineados, el toc no podia jejej */
     /* margin-left: 210px; */
     border-radius: 50px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+    /*! cambios en sombra*/
+
+    box-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.462), 
+        0 0 5px rgba(0, 0, 0, 0.462);
+
+
+
+    /* box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137); */
 }
 
 #dexball4 {
@@ -97,7 +122,15 @@ header.titulo {
     /* margin-top: -30px; /*Igual en que en el dexball3*/
     /*margin-left: 260px; */
     border-radius: 50px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137);
+
+    /*! cambios en sombra*/
+
+    box-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.462), 
+        0 0 5px rgba(0, 0, 0, 0.462);
+
+
+    /* box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.137); */
 }
 
 /* Estilos para el logo de la pokedex, centrarlo, tamaño maximo y posicionarlo */
@@ -282,3 +315,64 @@ footer {
     left: 10px;
     font-size: 1.3rem; /*Reducido el tamaña para que se vea mejor*/
   }
+
+@media (max-width: 600px){
+
+body { 
+    background-image: none;
+    margin-top: 20px;
+}
+
+
+#dexbody {
+    width: 100%; 
+    border-radius: 0;
+    margin: 0; 
+}
+
+header.titulo {
+    grid-template-columns: 90px 30px 30px 30px 1fr;
+}
+
+#dexball1{ 
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
+    margin-left: 10px; 
+}
+
+#dexball2 {
+    height: 22.5px;
+    width: 22.5px;
+    margin-top: 40px;
+    margin-left: -10px; 
+}
+    
+#dexball3 {
+    height: 22.5px;
+    width: 22.5px;
+    margin-top: 40px;
+    margin-left: -10px; 
+}
+    
+#dexball4 {
+    height: 22.5px;
+    width: 22.5px;
+    margin-top: 40px;
+    margin-left: -10px; 
+}
+
+#logo-pokedex {
+    width: 130px;
+    margin-top: 25px ;
+    margin-left: 10px;
+}
+
+#screen {
+    
+    width: 90%; 
+    margin-bottom: 40px;  
+}
+
+
+}
