@@ -3,61 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script type="module" src="./JS/main.js" defer></script>
+    <script type="module" src="./JS/pokedex_main.js" ></script>
     <title>Pokédex</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<div name="dexbody" id="dexbody">
+<main class="main">
     <header class="titulo">
-    <div name="dexball1" id="dexball1"></div>
-    <div name="dexball2" id="dexball2"></div>
-    <div name="dexball3" id="dexball3"></div>
-    <div name="dexball4" id="dexball4"></div>
-    <figure>
-        <img id="logo-pokedex" src="./assets/img/logo.png" alt="Logo de Pokedex">
-    </figure>
-    </header>
-    <div class="container">
-
-        <main name="screen" id="screen">
-
-<!-- He quitado el div 'screen2' y el 'teste' para que fuera la 'section id="pokecard"' directamente la pantalla principal -->
-
-            <section id="pokecard">
-                <form action="" onsubmit="busquedaPokemon(event)">
-                    <input type="text" name="browser" id="searchBox" class="searchBox" autocomplete="off" placeholder="Nombre Pokémon o #Id">
-                    <button type="submit" class="searchIcon"></button>
-                    <button type="button" class="restartIcon" onclick="reiniciarBusqueda()"></button>
+        <section class="container">                
+            <figure class="logo-poke">
+                <img src="./assets/img/bolapoke.png" id ="img-logo-poke" alt="Pikachu en una Pokeball">
+                <img src="./assets/img/logo.png" id="img-pokedex" alt="logo-pokedex">
+            </figure>
+            <nav class="browser-container">
+                <form class="browser-search">
+                    <img src="./assets/img/lupa.png" alt="lupa de busqueda" class="browser-icon">
+                    <input type="text" class="browser-input extension3-fonts" id="browser-search-input" autocomplete="off" placeholder="Nombre pokemon o ID">
+                    <img src="./assets/img/flecha.png" class="browser-close" id="browser-close" alt="Flecha de reinicio">
                 </form>
-                <div id="poke-name">Encuentra tu Pokémon</div>
-                <figure id="poke-img-container">
-                    <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
+            </nav>                                
+        </section>
+    </header>
+    <section class="pokemon-list">
+        <article class="container">
+            <div class="list-content"></div>
+        </article>
+        <figure id="pokemon-no-encontrado">
+            <p class="mensajeError">Pokémon no encontrado</p>
+            <img class="img-mensajeError" src="./assets/img/errorPikaPika.png" alt="Pikachu con interrogacion">
+        </figure>
+    </section>
+    <footer>
+        <p>Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
+            <br>
+            &copy; 2024. Todos los derechos reservados.
+        </p>
+    </footer>
+    <div id="pokedex-modal" name="pokedex-modal" class="pokedex-modal-ext">
+        <div id="dexbody" class="pokedex-modal-int">
+            <section class="titulo-pokedex">
+                <div name="dexball1" id="dexball1"></div>
+                <div name="dexball2" id="dexball2"></div>
+                <div name="dexball3" id="dexball3"></div>
+                <div name="dexball4" id="dexball4"></div>
+                <figure>
+                    <img id="logo-pokedex" src="./assets/img/logo.png" alt="Logo de Pokedex">
                 </figure>
-                <div id="poke-id"></div>
-                <div id="poke-height-weight"></div>
-                <div id="poke-types"></div>
-                <div id="poke-stats"></div>
+                <span class="close">&times;</span>
             </section>
-        </main>
+            <section class="container-pokedex">
+                <menu name="screen" id="screen">    
+                    <ul id="pokecard">
+                        <!-- <form action="" onsubmit="busquedaPokemon(event)"> -->
+                        <li id="poke-name">Encuentra tu Pokémon</li>
+                        <li id="poke-img-container">
+                            <img id="poke-img" src="./assets/img/bolapoke.png" alt="Encuentra tu Pokémon">                
+                        </li>
+                        <ul>
+                            <li id="poke-id"></li>
+                            <button type="button" name="shiny" class="shiny-button"></button>
+                        </ul>
+                        <li id="poke-height-weight"></li>
+                        <li id="poke-types"></li>
+                        <li id="poke-stats"></li>
+                    </ul>
+                </menu>
+            </section>
+        </div>
     </div>
-</div>   
-        
-<!-- He cambiado de orden los elementos de la clase 'footer' para que aparezcan el menor arriba y el mas largo abajo, quedando acorde visualmente. -->
-
-<footer>
-    <p>Creado por: <a href="https://github.com/AlbertoGongora/pokedex" target="_blank">Grupo C</a>
-        <br>
-        &copy; 2024. Todos los derechos reservados.
-    </p>
-</footer>
-
-    <script src="main.js"></script>
+</main>
+<script type="module" src="./main.js"></script>
+<script type="module" src="./pokedex_main.js" ></script>
 </body>
 </html>

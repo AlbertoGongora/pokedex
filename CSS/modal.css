@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Estilo de pokedex y tamaño maximo delimitado*/
+#dexbody {
+    background: red;
+    width: 90%;
+    max-width: 1000px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 14px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
+      -6px -6px 10px 0 rgba(0, 0, 0, 0.25) inset;
+
+}
+
+/* Estilos para el titulo de la pokedex, luces mas logo pokedex */
+.titulo-pokedex {
+    display: grid;
+    grid-template-columns: 150px 45px 45px 45px 1fr 20px;
+    margin-top: 15px;
+    
+}
+
+/* Estilos para el primer dexball, la mas grande. */
+#dexball1 {
+    background: radial-gradient(
+      circle,
+      rgb(205, 255, 255) 10%,
+      rgb(24, 36, 148) 60%
+    );
+    height: 80px;
+    width: 80px;
+    margin: auto;
+    border-radius: 50px; 
+    border: 7px solid white;
+
+    box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.462), 
+    0 0 5px rgba(0, 0, 0, 0.462);
+}
+  
+/* Estilos para los demas dexballs. */
+#dexball2 {
+  background: radial-gradient(circle, rgb(255, 129, 129) , #ff3c38 45%);
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  border-radius: 50px;
+
+  box-shadow: 
+  0 0 5px rgba(0, 0, 0, 0.462), 
+  0 0 5px rgba(0, 0, 0, 0.462);
+}
+
+#dexball3 {
+    background: radial-gradient(
+        circle,
+        rgba(255, 254, 179, 1) 5%,
+        rgba(251, 239, 76, 1) 45%
+    );
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    border-radius: 50px;
+
+    box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.462), 
+    0 0 5px rgba(0, 0, 0, 0.462);
+}
+
+#dexball4 {
+    background: radial-gradient(circle, rgb(179, 255, 204) 5%, #4ff017 45%);
+    height: 30px;
+    width: 30px;
+    margin: auto;
+    border-radius: 50px;
+
+    box-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.462), 
+    0 0 5px rgba(0, 0, 0, 0.462);
+}
+
+/* Estilos para el logo de la pokedex, centrarlo, tamaño maximo y posicionarlo */
+#logo-pokedex {
+    width: 200px;
+    margin-left: 15%;
+}
+
+/* Estilos para el contenedor el que contiene la pokedex */
+.container-pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+
+/* Estilos para la pantalla de la pokedex y el contorno negro estylo gameboy */
+#screen {
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    width: 80%;
+    max-width: 850px; 
+
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.329) inset,
+        -3px -3px 3px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+/* Estilos para la pantalla de la pokedex */
+#pokecard {
+    background-color: #f5f5f5ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    width: 95%; 
+}
+
+/* Estilos para el pokemon shiny */
+.shiny-button {
+    background: url(../assets/img/starPokemon.png) center / contain no-repeat #e62117;
+}
+
+
+/* Estilos para los botónes */
+button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el nombre */
+#poke-name {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    margin-bottom: 15px; 
+}
+
+
+/* Estilos para la imagen */
+#poke-img {
+    width: 170px; 
+    height: 170px;
+}
+
+/* Estilos para el ID */
+#poke-id {
+    font-size: 16px;
+    color: #888;
+    margin: 10px 0; 
+}
+
+/* Estilos para la altura y el peso */
+#poke-height-weight {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/*Estilos para los tipos*/
+#poke-types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos contenedores para los tipos de pokemon */
+.type {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+
+}
+
+
+/* Estilos para las estadísticas */
+#poke-stats {
+    max-width: 600px;
+    text-align: left;
+    /*Eliminado margin top ya que abajo esta definido*/
+    color: #444;
+    margin: 0 auto;
+}
+
+#poke-stats div {
+    margin-bottom: 8px;
+}
+
+.stat-row {
+    display: flex;
+}
+
+.stat-bar {
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: #ccc;
+    height: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-inner {
+    height: 100%;
+    background-color: #e62117;
+}
+
+.stat-desc, .stat-number {
+    /* flex-shrink: 0; */
+    font-weight: bold;
+}
+
+.stat-desc {
+    width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Estilos para el numero de estadisticas */
+.stat-number {
+    width: 5%;
+    text-align: right;
+}
+
+/* Estilos para la cruz de cierre del modal */
+span.close {
+    position: relative;
+    top: -10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+@media (max-width: 600px){
+
+    body { 
+        background-image: none;
+        margin-top: 20px;
+    }
+    
+    
+    #dexbody {
+        width: 100%; 
+        border-radius: 0;
+        margin: 0; 
+    }
+    
+    header.titulo {
+        grid-template-columns: 90px 30px 30px 30px 1fr;
+    }
+    
+    #dexball1{ 
+        height: 60px;
+        width: 60px;
+        margin-top: 20px;
+        margin-left: 10px; 
+    }
+    
+    #dexball2 {
+        height: 22.5px;
+        width: 22.5px;
+        margin-top: 40px;
+        margin-left: -10px; 
+    }
+        
+    #dexball3 {
+        height: 22.5px;
+        width: 22.5px;
+        margin-top: 40px;
+        margin-left: -10px; 
+    }
+        
+    #dexball4 {
+        height: 22.5px;
+        width: 22.5px;
+        margin-top: 40px;
+        margin-left: -10px; 
+    }
+    
+    #logo-pokedex {
+        width: 130px;
+        margin-top: 25px ;
+        margin-left: 10px;
+    }
+    
+    #screen {
+        
+        width: 90%; 
+        margin-bottom: 40px;  
+    }
+    
+    
+    }
+    
