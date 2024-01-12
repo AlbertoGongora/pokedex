@@ -1,0 +1,259 @@
+@import url(./modal.css);
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Estilos generales */
+body {
+    height: 100vh;
+    width: 100vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    overflow-y: hidden; /* Agrega esta línea para ocultar la barra de desplazamiento vertical */
+}
+
+
+main {
+    background-color: #dc0a2d;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Estilos de la barra de navegación */
+.titulo {
+    width: 90%;
+    gap: 1rem;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Estilos del logo */
+.logo-poke {
+    display: flex;
+    align-items: center;
+}
+
+.logo-poke > img {
+    margin-right: 16px;
+}
+
+/* Estilos del logo de la pokeball pikachu */
+#img-logo-poke {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Estilos de la imagen de la pokedex */
+#img-pokedex {
+    height: 50px;
+}
+
+/* Estilos del navegador */
+.browser-container,
+.browser-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+}
+
+.browser-search > input {
+    width: 80%;
+    border: none;
+}
+
+.browser-search > input:focus {
+    outline: none;
+}
+
+
+/* Estilos de la barra de busqueda */
+.browser-search {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.25) inset;
+    height: 32px;
+    gap: 8px;
+
+}
+
+/* Estilos de los iconos */
+.browser-icon {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+
+.browser-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.browser-close {
+    width: 35px;
+    height: 35px;
+}
+
+.browser-close {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
+/* Estilos de la lista contenedora de las cartas de pokemón */
+.pokemon-list {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.25) inset;
+    border-radius: 0.75rem;
+    min-height: calc(80% - 1rem);
+    width: calc(100% - 2rem);
+    max-height: 100px;
+    overflow-y: auto;
+
+    /* Estilos de la barra de desplazamiento */
+    scrollbar-width: thin;
+    scrollbar-color: #dc0a2d #ffffff; 
+}
+
+.pokemon-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+.pokemon-list::-webkit-scrollbar-thumb {
+    background-color: #dc0a2d; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 4px 0 0 4px; /* Bordes redondeados */
+}
+
+.pokemon-list::-webkit-scrollbar-track {
+    background-color: #ccc; /* Color del fondo de la barra de desplazamiento */
+}
+
+
+/* Posicion de las cartas pokemon */
+.list-content {
+    margin: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+}
+
+/* Estilos de las cartas pokemon */
+.list-object {
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    width: 9rem;
+    height: 9rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.list-object .numero-pokemon {
+    min-height: 16px;
+    text-align: right;
+    padding: 0 8px;
+    color: #666666;
+}
+
+.list-object .nombre-pokemon {
+    font-weight: 500;
+    border-radius: 7px;
+    background-color: #efefef;
+    padding: 24px 8px 4px 8px;
+    color: #212121;
+    margin-top: -15px;
+}
+
+.list-object .img-pokemon {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+}
+
+.list-object:hover {
+    cursor: url('../assets/img/pokeballpointer.png'), default;
+    background-color: #eae7e7;
+    text-shadow: none;
+
+    transform: scale(1.05);
+    transition: 0.2s;
+    perspective: 0;
+}
+
+
+.list-object .img-pokemon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos del mensaje de error */
+#not-found-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.mensajeError {
+    display: none;
+    margin: 25px auto;
+    color: #dc0a2d;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.img-mensajeError {
+    display: none;
+    margin: 25px auto;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/* Estilos del footer incrustado en la pokedex */
+footer {
+    position: relative;
+    padding-left: 10px;
+    width: 100%;
+    top: -.9rem;
+}
+
+.pokedex-modal-ext {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
