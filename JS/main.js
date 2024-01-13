@@ -1,3 +1,5 @@
+import { informacionPokemon } from "./pokedex_main.js";
+
 const maxPokemons = 1012; // Cantidad máxima de pokemones
 const listContent = document.querySelector('.list-content'); // Lista de pokemones  
 const browser = document.querySelector('#browser-search-input'); // Buscador
@@ -8,6 +10,7 @@ const pokemonNoEncontradoImg = document.querySelector('.img-mensajeError'); // P
 
 // Matriz de pokemones 
 let allPokemons = []; // Array de pokemones
+let selectedPokemonID = 1; // ID del pokemon seleccionado y que pasara esa id al otro archivo para mostrar la informacion
 
 const localStoragePokemonList = JSON.parse(localStorage.getItem('allPokemons'));
 
@@ -37,7 +40,7 @@ function visualizarPokemons(pokemon) {
             listObject.className = "list-object";
             listObject.innerHTML = `
                     <li class="numero-pokemon">
-                        <p class="titulo-fonts">#${pokemonID}</p> 
+                        <p class="seleccionID">#${pokemonID}</p> 
                     </li>
                     <li class="img-pokemon">
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonID}.png" alt="${pokemon.name}"> 
@@ -93,11 +96,15 @@ function clearSearch() {
   pokemonNoEncontradoImg.style.display = 'none';
 }
 
-// abrir el modal
-function abrirModal() {
+// Abrir el modal
+function abrirModal(pokemonID) {
     const modal = document.getElementById('pokedex-modal');
     modal.style.display = 'flex';
+
+    // Llamar a la función informacionPokemon con el ID del Pokémon seleccionado
+    informacionPokemon(pokemonID);
 }
+
 
 // cerrar el modal
 function cerrarModal() {
@@ -111,8 +118,18 @@ function cerrarModal() {
 listContent.addEventListener('click', function (event) {
     const target = event.target.closest('.list-object');
     if (target) {
-        abrirModal();
+        // Obtener el ID del Pokémon al hacer clic
+        const numeroPokemonElement = target.querySelector('.seleccionID');
+        if (numeroPokemonElement) {
+            selectedPokemonID = numeroPokemonElement.textContent.slice(1);
+            abrirModal(selectedPokemonID);
+        } else {
+            console.error('Elemento numero-pokemon no encontrado.');
+        }
     }
 });
 
 document.querySelector('.close').addEventListener('click', cerrarModal);
+
+export { selectedPokemonID};
+
