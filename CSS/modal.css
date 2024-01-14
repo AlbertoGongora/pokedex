@@ -311,7 +311,7 @@ span.close {
         margin: 0; 
     }
     
-    header.titulo {
+    section.titulo-pokedex {
         grid-template-columns: 90px 30px 30px 30px 1fr;
     }
     
