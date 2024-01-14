@@ -260,9 +260,15 @@ footer {
     cursor: pointer;
 }
 
-/* @media (max-height: 900px){
+@media (max-height: 1225px){
 
     .pokemon-list {
-        min-height: calc(87% - 38px);
+        max-height: calc(95% - 38px);
     }
-} */
+}
+
+@media (max-width: 600px){
+    body {
+        margin-top: 0;
+    }
+}

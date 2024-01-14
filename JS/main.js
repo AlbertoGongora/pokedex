@@ -29,7 +29,6 @@ if (localStoragePokemonList) {
             allPokemons = data.results;
             localStorage.setItem('allPokemons', JSON.stringify(allPokemons));
             visualizarPokemons(allPokemons);
-            console.log(allPokemons);
         });
 }
 
@@ -175,6 +174,13 @@ listContent.addEventListener('click', function (event) {
 document.querySelector('.close').addEventListener('click', cerrarModal);
 document.querySelector('.pokedex-modal-ext').addEventListener('click', cerrarModal);
 
+// Aquí tenemos a un psicópata
+window.addEventListener('blur', () => { 
+    
+    setTimeout(() => { 
+        document.title = '¡Hazte con todos!'
+    }, 7000)
+})
+
 // Exportar las variables
 export { selectedPokemonID, maxPokemons, cerrarModal };
-

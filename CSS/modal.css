@@ -312,7 +312,7 @@ span.close {
     }
     
     section.titulo-pokedex {
-        grid-template-columns: 90px 30px 30px 30px 1fr;
+        grid-template-columns: 90px 30px 30px 30px 1fr 15px;
     }
     
     #dexball1{ 
@@ -355,7 +355,22 @@ span.close {
         margin-bottom: 40px;  
     }
     
-    
+    .img-pokeball-background {
+        right: 20px;
+        top: 5px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .poke-img-container {
+        gap: 0;
+    }
+}
+
+@media (max-height: 750px){
+    .stat-row {
+        display: none;
+    }
 }
 
 
