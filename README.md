@@ -30,10 +30,6 @@ Buscador de Pokémon extrayendo la información desde la PokeAPI (https://pokeap
         - Colocación de botones dentro de las propias cartas para poder recorrer desde ese punto hacia el siguiente o anterior Pokémon, sin necesidad de introducir el nombre o ID.
         - Se han realizado varias pruebas con el Favico, ya que, aparecieron errores. 
         
-  ![Alt text](Carta.pokedex.png) 
-  ![Alt text](Directorio.pokedex.png)
-    
-
     URL acceso:
         - albertogongora.github.io/pokedex/
 
