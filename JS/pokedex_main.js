@@ -108,7 +108,7 @@ function mostrarPokedex({ pokemonDetails}) {
     const pokeName = document.createElement('li');
 
     //Contenerdor con la imagen del Pokemon y las flechas para poder navegar entre pokemones
-    const pokeImgContainer = document.createElement('li');
+    const pokeImgContainer = document.createElement('figure');
     const pokeImg = document.createElement('img');
     const flechaderecha = document.createElement('img');
     const flechaizquierda = document.createElement('img');
@@ -117,9 +117,9 @@ function mostrarPokedex({ pokemonDetails}) {
     const cardForm = document.createElement('ul');
     
     //Contenedor con ID y boton de cambio de imagen
-    const pokemonImgShinyContainer = document.createElement('ul');
+    const pokemonImgShinyContainer = document.createElement('li');
     const shinyButton = document.createElement('button');
-    const pokeId = document.createElement('li');
+    const pokeId = document.createElement('p');
 
     //Contenedor con los datos de altura y peso
     const pokeHeightWeight = document.createElement('li');
@@ -261,13 +261,13 @@ function mostrarPokedex({ pokemonDetails}) {
 // Funcion para obtener los tipos y que se tengan el estilo segun el color correspondiente al tipo
 const PokemonTypes = (types) => {
     // Crea contenedor para los tipos y asocia una clase
-    const typesContainer = document.createElement('ul');  
+    const typesContainer = document.createElement('li');  
     typesContainer.classList.add('poke-types');
 
     // Crea un elemento para cada tipo
     types.forEach(type => {
         // Crea un elemento li y asocia una clase para cada tipo
-        const typeElement = document.createElement('li'); 
+        const typeElement = document.createElement('p'); 
         typeElement.classList.add('type');
 
         // Asigna el color correspondiente al tipo
@@ -339,6 +339,3 @@ function setCurrentPokemonID(value) {
 
 // Exportar las funciones
 export { informacionPokemon, currentPokemonID, setCurrentPokemonID };
-
-
-
