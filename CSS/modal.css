@@ -6,7 +6,6 @@
     background-color: #dc0a2d;
     width: 80%;
     max-width: 850px;
-    max-height: 95%;
     padding-bottom: 40px;
     border-radius: 8px;
     box-shadow: 14px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
@@ -174,8 +173,8 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     
-    width: 95%;
-    padding: 0 15px;
+    width: 80%;
+    padding: 0 30px;
 
     margin-bottom: 15px;
     margin-top: -50px;
@@ -241,7 +240,7 @@ button {
 
 /* Estilos para las estadísticas */
 .poke-stats {
-    width: 90%;
+
     text-align: left;
     color: #444;
 }
@@ -269,7 +268,6 @@ button {
 }
 
 .stat-desc, .stat-number {
-    /* flex-shrink: 0; */
     font-weight: bold;
 }
 
@@ -277,6 +275,7 @@ button {
     width: 30%;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Estilos para el numero de estadisticas */
@@ -307,7 +306,6 @@ span.close {
     
     #dexbody {
         width: 100%; 
-        border-radius: 0;
         margin: 0; 
     }
     
@@ -365,9 +363,23 @@ span.close {
     .poke-img-container {
         gap: 0;
     }
+
+    .card-form {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .stat-row {
+        gap: 0;
+    }
+
+    .stat-number {
+        width: 10%;
+    }
 }
 
-@media (max-height: 750px){
+@media (max-height: 725px){
+
     .stat-row {
         display: none;
     }
