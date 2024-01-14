@@ -174,13 +174,15 @@ listContent.addEventListener('click', function (event) {
 document.querySelector('.close').addEventListener('click', cerrarModal);
 document.querySelector('.pokedex-modal-ext').addEventListener('click', cerrarModal);
 
-// Aquí tenemos a un psicópata
 window.addEventListener('blur', () => { 
-    
     setTimeout(() => { 
-        document.title = '¡Hazte con todos!'
-    }, 7000)
-})
+        document.title = '¡Hazte con todos!';
+    }, 10000);
+});
+
+window.addEventListener('focus', () => {
+    document.title = '¡Has vuelto, A por ellos!';
+});
 
 // Exportar las variables
 export { selectedPokemonID, maxPokemons, cerrarModal };
