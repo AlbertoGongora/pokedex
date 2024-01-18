@@ -1,4 +1,4 @@
-# pokedex
+# Pokédex
 **# Proyecto Grupo C jsb32rt**
 
 **# Pokédex**
