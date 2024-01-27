@@ -87,12 +87,6 @@
     margin-left: 10%;
 }
 
-/* Estilos para el contenedor el que contiene la pokedex */
-/* .container-pokedex {
-    
-} */
- 
-
 /* Estilos para la pantalla de la pokedex y el contorno negro estylo gameboy */
 #screen {
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
@@ -154,10 +148,21 @@
     margin-bottom: 20px;
 }
 
+/* Efecto de los botones de desplazamientos de los pokemon */
 .flechaizquierda, .flechaderecha {
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
-    
+
+.flechaizquierda:active {
+    transform: translateX(-5px); 
+    transition: transform 0s; 
+}
+
+.flechaderecha:active {
+    transform: translateX(5px); 
+    transition: transform 0s; 
+}
 
 
 .poke-img-container {
@@ -505,4 +510,13 @@ span.close {
     #pokecard {
         overflow: hidden;
     }
+
+    .card-form {
+        height: 40px;
+
+        margin-bottom: 5px;
+        margin-top: -70px;
+    }
+
 }
+

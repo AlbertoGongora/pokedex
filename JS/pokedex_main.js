@@ -242,17 +242,19 @@ function mostrarPokedex({ pokemonDetails}) {
         barInner.style.backgroundColor = typeColors[type.type.name];
     });
 
-    //Al estar al inicio y al final de la pokedex, no muestra las flechas hacia donde no quedan Pokemons
-    if (id ===1) {
-        // Si estas en el numero uno no muestra la flecha izquierda
+    if (id === 1) {
+        // Si estás en el número uno, no muestra la flecha izquierda
         flechaizquierda.style.display = 'none';
-        }
-    
-    // Si estas en el numero maximo no muestra la flecha derecha
-        if (id === maxPokemons) {
-            flechaderecha.style.display = 'none';
+        pokeImg.style.marginLeft = '15%';
     }
-
+    
+    // Si estás en el número máximo, no muestra la flecha derecha
+    if (id === maxPokemons) {
+        flechaderecha.style.display = 'none';
+        pokeImg.style.transform = 'translateX(-15%)';
+        flechaizquierda.style.transform = 'translateX(-20%)';
+    }
+    
     // Eventos para navegar por la pokedex
     flechaizquierda.addEventListener('click', () => cambiarPokemon(-1));
     flechaderecha.addEventListener('click', () => cambiarPokemon(1));
