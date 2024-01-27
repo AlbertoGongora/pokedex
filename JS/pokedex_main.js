@@ -60,8 +60,8 @@ const statsTranslations = {
     hp: 'Vida',
     attack: 'Ataque',
     defense: 'Defensa',
-    'special-attack': 'Ataque Especial',
-    'special-defense': 'Defensa Especial',
+    'special-attack': 'Atq. Esp',
+    'special-defense': 'Def. Esp',
     speed: 'Velocidad'
 }
 
@@ -256,7 +256,9 @@ function mostrarPokedex({ pokemonDetails}) {
     // Eventos para navegar por la pokedex
     flechaizquierda.addEventListener('click', () => cambiarPokemon(-1));
     flechaderecha.addEventListener('click', () => cambiarPokemon(1));
+
 }
+
 
 // Funcion para obtener los tipos y que se tengan el estilo segun el color correspondiente al tipo
 const PokemonTypes = (types) => {

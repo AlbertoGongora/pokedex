@@ -6,7 +6,7 @@
     background-color: #dc0a2d;
     width: 80%;
     max-width: 850px;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     border-radius: 8px;
     box-shadow: 14px 10px 14px 0 rgba(255, 255, 255, 0.3) inset,
       -6px -6px 10px 0 rgba(0, 0, 0, 0.25) inset;
@@ -83,8 +83,8 @@
 
 /* Estilos para el logo de la pokedex, centrarlo, tamaño maximo y posicionarlo */
 #logo-pokedex {
-    width: 200px;
-    margin-left: 15%;
+    width: 170px;
+    margin-left: 10%;
 }
 
 /* Estilos para el contenedor el que contiene la pokedex */
@@ -103,7 +103,7 @@
     flex-direction: column;
     align-items: center;
 
-    margin: 20px auto;
+    margin: 15px auto;
     padding: 20px;
     text-align: center;
     border-radius: 5px;
@@ -141,8 +141,8 @@
 .poke-name {
     font-size: 2rem; 
     font-weight: bold;
-    margin-bottom: 15px;
-    padding-top: 15px; 
+    margin-bottom: 10px;
+    padding-top: 10px; 
     z-index: 1;
 }
 
@@ -191,8 +191,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 5px; 
+    gap: 10px; 
     padding-top: 35px;
 }
 
@@ -216,7 +215,7 @@ button {
 .poke-height-weight {
     font-size: 14px;
     color: #444;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /*Estilos para los tipos*/
@@ -272,10 +271,7 @@ button {
 }
 
 .stat-desc {
-    width: 30%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 85px;
 }
 
 /* Estilos para el numero de estadisticas */
@@ -296,7 +292,7 @@ span.close {
 }
 
 
-@media (max-width: 600px){
+@media (max-width: 680px){
 
     body { 
         background-image: none;
@@ -316,24 +312,13 @@ span.close {
     #dexball1{ 
         height: 60px;
         width: 60px;
+        border: 5px solid white;
         margin-top: 20px;
         margin-left: 10px; 
     }
     
-    #dexball2 {
-        height: 22.5px;
-        width: 22.5px;
-        margin-top: 40px;
-        margin-left: -10px; 
-    }
-        
-    #dexball3 {
-        height: 22.5px;
-        width: 22.5px;
-        margin-top: 40px;
-        margin-left: -10px; 
-    }
-        
+    #dexball2, 
+    #dexball3, 
     #dexball4 {
         height: 22.5px;
         width: 22.5px;
@@ -376,9 +361,14 @@ span.close {
     .stat-number {
         width: 10%;
     }
+
+    span.close {
+        top: 0;
+        right: 20px;
+    }
 }
 
-@media (max-height: 725px){
+@media (max-height: 550px){
 
     .stat-row {
         display: none;
@@ -386,4 +376,133 @@ span.close {
 }
 
 
+@media (max-width: 400px){
+    #dexbody {
+        padding: 0;
+    }
+    #dexball1{ 
+        height: 50px;
+        width: 50px;
+        margin-top: 18px;
+    }
     
+    #dexball2, 
+    #dexball3, 
+    #dexball4 {
+        height: 18px;
+        width: 18px;
+        margin-top: 35px;
+        margin-left: -25px; 
+    }
+
+    #logo-pokedex {
+        width: 100px;
+        margin-left: -25px;
+    }
+
+    .poke-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .flechaderecha {
+        margin-left: -10px;
+    }
+
+    .flechaizquierda {
+        margin-right: -10px;
+    }
+
+    .poke-name {
+        font-size: 1.5rem;
+    }
+
+    .img-pokeball-background {
+        width: 150px;
+        height: 150px;
+    }
+
+    .poke-id {
+        font-size: 0.8rem;
+    }
+
+    .poke-height-weight {
+        font-size: 10px;
+    }
+
+    .type {
+        font-size: 14px;
+    }
+
+    .poke-stats {
+        font-size: 10px;
+        margin: 0 -5px;
+    }
+
+    .stat-bar {
+        height: 10px;
+    }
+
+    .stat-desc {
+        width: 55px;
+    }
+
+} 
+
+@media (max-height: 420px){
+
+    #dexbody {
+        padding: 0;
+    }
+    #dexball1{ 
+        height: 40px;
+        width: 40px;
+        border: 3px solid white;
+        margin-top: 14px;
+    }
+    
+    #dexball2, 
+    #dexball3, 
+    #dexball4 {
+        height: 14px;
+        width: 14px;
+ 
+        margin-top: 30px;
+        margin-left: -30px; 
+    }
+
+    #logo-pokedex {
+        width: 80px;
+        margin-left: -20px;
+    }
+    .pokemon-img-shiny-container {
+        display: none;
+    }
+
+    .poke-height-weight {
+        display: none;
+    }
+
+    .poke-types {
+        display: none;
+    }
+
+    .poke-img-container {
+        margin-bottom: 20px;
+    }
+
+    .poke-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .poke-name {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        padding-top: 5px;
+    }
+
+    #pokecard {
+        overflow: hidden;
+    }
+}

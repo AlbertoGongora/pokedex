@@ -10,6 +10,7 @@ const browser = document.querySelector('#browser-search-input'); // Buscador
 const closeButton = document.querySelector(".browser-close");
 const pokemonNoEncontradoTexto = document.querySelector('.mensajeError'); // Pokemon no encontrado
 const pokemonNoEncontradoImg = document.querySelector('.img-mensajeError'); // Pokemon no encontrado
+const browserClose = document.querySelector('.browser-close');
 
 // Matriz de pokemones 
 let allPokemons = []; // Array de pokemones
@@ -183,6 +184,14 @@ window.addEventListener('blur', () => {
 window.addEventListener('focus', () => {
     document.title = '¡Has vuelto, A por ellos!';
 });
+
+// Sonido al reiniciar la busqueda
+browserClose.addEventListener('click', () => {
+    const audio = new Audio();
+    audio.src = './assets/sounds/poke_recovery.mp4';
+    audio.play();
+})
+
 
 // Exportar las variables
 export { selectedPokemonID, maxPokemons, cerrarModal };
