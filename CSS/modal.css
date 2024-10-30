@@ -152,6 +152,7 @@
 .flechaizquierda, .flechaderecha {
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 5rem;
 }
 
 .flechaizquierda:active {
